@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A94C2C1B-7BDE-423A-A0A2-F7EAA23CFB71}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyApp.Models</RootNamespace>
+    <AssemblyName>MyApp.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTO.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Src\Scree.Attributes\Scree.Attributes.csproj">
+      <Project>{c01bca8f-6d18-4c84-b91f-fe965344659d}</Project>
+      <Name>Scree.Attributes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Src\Scree.Cache\Scree.Cache.csproj">
+      <Project>{7684d00c-c53f-47b7-9e1f-21fbea393bba}</Project>
+      <Name>Scree.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Src\Scree.Common\Scree.Common.csproj">
+      <Project>{8290d9fa-0fd4-4dd4-b93e-d16cf226193c}</Project>
+      <Name>Scree.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Src\Scree.Lock\Scree.Lock.csproj">
+      <Project>{fba1a432-5f11-48ac-89c5-3bf306fac571}</Project>
+      <Name>Scree.Lock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Src\Scree.Persister\Scree.Persister.csproj">
+      <Project>{000da3e8-b611-4a1a-a533-7cb44b593e40}</Project>
+      <Name>Scree.Persister</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Src\Scree.Syn\Scree.Syn.csproj">
+      <Project>{8f502972-7357-4b53-926a-2da6aade7370}</Project>
+      <Name>Scree.Syn</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{000DA3E8-B611-4A1A-A533-7CB44B593E40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Scree.Persister</RootNamespace>
+    <AssemblyName>Scree.Persister</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DLL\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbTableService.cs" />
+    <Compile Include="PersisterService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SRO.cs" />
+    <Compile Include="IPersisterService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Scree.Attributes\Scree.Attributes.csproj">
+      <Project>{C01BCA8F-6D18-4C84-B91F-FE965344659D}</Project>
+      <Name>Scree.Attributes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scree.Cache\Scree.Cache.csproj">
+      <Project>{7684D00C-C53F-47B7-9E1F-21FBEA393BBA}</Project>
+      <Name>Scree.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scree.Common\Scree.Common.csproj">
+      <Project>{8290D9FA-0FD4-4DD4-B93E-D16CF226193C}</Project>
+      <Name>Scree.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scree.Core.IoC\Scree.Core.IoC.csproj">
+      <Project>{5ADBFDE4-2D53-43BF-AF0F-511926EAE1CC}</Project>
+      <Name>Scree.Core.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scree.DataBase\Scree.DataBase.csproj">
+      <Project>{98F6BAAC-B04C-4D29-8AE9-51869C72F528}</Project>
+      <Name>Scree.DataBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scree.Log\Scree.Log.csproj">
+      <Project>{E2DC6764-F6F6-42E7-A766-82C205B935B4}</Project>
+      <Name>Scree.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scree.Syn.Client\Scree.Syn.Client.csproj">
+      <Project>{0E047EBA-28E0-462C-A2DA-C07637C2A401}</Project>
+      <Name>Scree.Syn.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Scree.Syn\Scree.Syn.csproj">
+      <Project>{8F502972-7357-4B53-926A-2DA6AADE7370}</Project>
+      <Name>Scree.Syn</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
